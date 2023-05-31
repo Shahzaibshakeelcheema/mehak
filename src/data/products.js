@@ -1,0 +1,98 @@
+export const products = [
+  {
+    id:1,
+    title: "OUD e Kafil",
+    description:
+      "The Holy Prophet referred to agarwood as a distinct item found in Paradise. In Hebrew tradition, The Song of Songs describes Oud as a form of incense, and King Solomon as “coming up from the desert like a column of smoke, perfumed with myrrh and incense.”",
+    price: 549,
+    rating: 4.69,
+    stock: 94,
+    brand: "Perfume",
+    category: "Oud",
+    image: "/images/a.jpg",
+  },
+  {
+    id:2,
+    title: "Oud e Aswad",
+    description:
+      "The Holy Prophet referred to agarwood as a distinct item found in Paradise. In Hebrew tradition, The Song of Songs describes Oud as a form of incense, and King Solomon as “coming up from the desert like a column of smoke, perfumed with myrrh and incense.”",
+    price: 549,
+    rating: 4.69,
+    stock: 94,
+    brand: "Perfume",
+    category: "Oud",
+    image: "/images/b.jpg",
+  },
+  {
+    id:3,
+    title: "Oud e Asmad",
+    description:
+      "The Holy Prophet referred to agarwood as a distinct item found in Paradise. In Hebrew tradition, The Song of Songs describes Oud as a form of incense, and King Solomon as “coming up from the desert like a column of smoke, perfumed with myrrh and incense.”",
+    price: 549,
+    rating: 4.69,
+    stock: 94,
+    brand: "Perfume",
+    category: "Oud",
+    image: "/images/c.jpg",
+  },
+  {
+    id:4,
+    title: "Oud e Zafran",
+    description:
+      "The Holy Prophet referred to agarwood as a distinct item found in Paradise. In Hebrew tradition, The Song of Songs describes Oud as a form of incense, and King Solomon as “coming up from the desert like a column of smoke, perfumed with myrrh and incense.”",
+    price: 549,
+    rating: 4.69,
+    stock: 94,
+    brand: "Perfume",
+    category: "Oud",
+    image: "/images/d.jpg",
+  },
+  {
+    id:5,
+    title: "Oud al Hind",
+    description:
+      "The Holy Prophet referred to agarwood as a distinct item found in Paradise. In Hebrew tradition, The Song of Songs describes Oud as a form of incense, and King Solomon as “coming up from the desert like a column of smoke, perfumed with myrrh and incense.”",
+    price: 549,
+    rating: 4.69,
+    stock: 94,
+    brand: "Perfume",
+    category: "Oud",
+    image: "/images/e.jpg",
+  },
+  {
+    id:6,
+    title: "Seikh al Oud",
+    description:
+      "The Holy Prophet referred to agarwood as a distinct item found in Paradise. In Hebrew tradition, The Song of Songs describes Oud as a form of incense, and King Solomon as “coming up from the desert like a column of smoke, perfumed with myrrh and incense.”",
+    price: 549,
+    rating: 4.69,
+    stock: 94,
+    brand: "Perfume",
+    category: "Oud",
+    image: "/images/f.jpg",
+  },
+  {
+    id:7,
+    title: "Dunhil Oud",
+    description:
+      "The Holy Prophet referred to agarwood as a distinct item found in Paradise. In Hebrew tradition, The Song of Songs describes Oud as a form of incense, and King Solomon as “coming up from the desert like a column of smoke, perfumed with myrrh and incense.”",
+    price: 549,
+    rating: 4.69,
+    stock: 94,
+    brand: "Perfume",
+    category: "Oud",
+    image: "/images/i.jpg",
+  },
+  {
+    id:8,
+    title: "Imam ul Oud",
+    description:
+      "The Holy Prophet referred to agarwood as a distinct item found in Paradise. In Hebrew tradition, The Song of Songs describes Oud as a form of incense, and King Solomon as “coming up from the desert like a column of smoke, perfumed with myrrh and incense.”",
+    price: 549,
+    rating: 4.69,
+    stock: 94,
+    brand: "Perfume",
+    category: "Oud",
+    image: "/images/h.jpg",
+  },
+];

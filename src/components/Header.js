@@ -3,11 +3,13 @@ import { Navbar, Nav, Form, FormControl, Button, Dropdown } from 'react-bootstra
 import { useSelector } from 'react-redux';
 import logo from '../logo.png'
 import { Link } from 'react-router-dom';
+import {faCartShopping} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Header = () => {
     
   return (
-    <Navbar expand="lg" bg="primary" variant="dark" className='p-0 '>
+    <Navbar expand="lg" bg="primary" variant="dark" className='p-0 d-flex jusify-content-between '>
     <Navbar.Brand as={Link} to="/" className='ml-3' >
     <img src={logo} alt="Logo" width="70" height="70" className="d-inline-block align-top" />
     <span className="mt-2">Mehak Mehal</span></Navbar.Brand>
@@ -24,20 +26,26 @@ const Header = () => {
           </Dropdown.Toggle>
           <Dropdown.Menu>
             <Dropdown.Item as={Link}  to="">Action</Dropdown.Item>
-            <Dropdown.Item as={Link}  to="#">Another action</Dropdown.Item>
-            <Dropdown.Item as={Link} to="#">Something else here</Dropdown.Item>
+            <Dropdown.Item as={Link}  to="/">Another action</Dropdown.Item>
+            <Dropdown.Item as={Link} to="/">Something else here</Dropdown.Item>
             <Dropdown.Divider />
-            <Dropdown.Item as={Link} to="#">Separated link</Dropdown.Item>
+            <Dropdown.Item as={Link} to="/">Separated link</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
-      </Nav>
-     
-      <Form className="d-flex">
+        <Form className="d-flex">
         <FormControl type="search" placeholder="Search" className="me-sm-2" />
         <Button variant="secondary" className="my-2 my-sm-0" type="submit">Search</Button>
       </Form>
-      <Nav>
+      <div className='mr-3'>
+      <Nav className='mr-3'>
+      <Nav.Link as={Link} to="/cart">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FontAwesomeIcon icon={faCartShopping} size='2xl' style={{color: "#ffffff",}} /></Nav.Link>
+
       </Nav>
+      </div>
+     
+      </Nav>
+      
+      
     </Navbar.Collapse>
   </Navbar>
   )

@@ -1,18 +1,18 @@
 import React from 'react'
 import { Navbar, Nav, Form, FormControl, Button, Dropdown } from 'react-bootstrap';
 // import { useSelector } from 'react-redux';
-import logo from '../logo.png'
+import logo2 from '../logo2.png'
 import { Link } from 'react-router-dom';
 import {faCartShopping} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+//
 const Header = () => {
-    
+    //<span className="mt-2" as='h1'> مہکستان</span>
   return (
     <Navbar expand="lg" bg="primary" variant="dark" className='p-0 d-flex jusify-content-between '>
     <Navbar.Brand as={Link} to="/" className='ml-3' >
-    <img src={logo} alt="Logo" width="70" height="70" className="d-inline-block align-top" />
-    <span className="mt-2">Mehak Mehal</span></Navbar.Brand>
+    <img src={logo2} alt="Logo" width="120" height="70" className="d-inline-block align-top" />
+    </Navbar.Brand>
     <Navbar.Toggle aria-controls="navbarColor01" />
     <Navbar.Collapse id="navbarColor01">
       <Nav className="me-auto">

@@ -16,31 +16,31 @@ debugger
       <Link className="btn btn-light my-3" to="/product/">
         Go Back
       </Link>
-
+<h4>Order Histories</h4>
       {orders.length === 0 ? (
         <div>No orders available</div>
       ) : (
         orders.map((order) => {
           const { id, name, address, cartItems } = order;
-debugger
+
           // Check if items array is defined and not empty
           if (!cartItems || cartItems.length === 0) {
             return null; // Skip rendering this order
           }
-debugger
+
           // Calculate total quantity and total price for each order
           let totalQuantity = 0;
           let totalPrice = 0;
-debugger
+
           cartItems.forEach((item) => {
             totalQuantity += Number(item.qty);
             totalPrice += item.qty * item.price;
           });
-debugger
+
           return (
             <Row className="border mt-5 table table-hover" key={id}>
               <Row>
-                <h1>Order Confirmation</h1>
+                <h1>Order Recipt</h1>
               </Row>
               <Row className="">
                 <Col>Order ID:</Col>

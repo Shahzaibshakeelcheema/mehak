@@ -1,6 +1,6 @@
-import React,{useState} from 'react'
+import React from 'react'
 import { Navbar, Nav, Form, FormControl, Button, Dropdown } from 'react-bootstrap';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 import logo from '../logo.png'
 import { Link } from 'react-router-dom';
 import {faCartShopping} from '@fortawesome/free-solid-svg-icons'
@@ -21,7 +21,7 @@ const Header = () => {
         <Nav.Link as={Link}  to="/pricing">Pricing</Nav.Link>
         <Nav.Link as={Link} to="/about">About</Nav.Link>
         <Dropdown as={Nav.Item}>
-          <Dropdown.Toggle as={Nav.Link} id="dropdown-nav-link">
+          <Dropdown.Toggle as={Nav.Link} id="dropdown-nav-link" disabled>
             Dropdown
           </Dropdown.Toggle>
           <Dropdown.Menu>

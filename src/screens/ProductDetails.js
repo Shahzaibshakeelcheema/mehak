@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams, useNavigate } from "react-router-dom";
 // import { useParams } from 'react-router-dom';
 import { addToCart } from '../actions/cartActions';
-
+import '../App.css'
 import {
   Row,
   Col,
@@ -14,10 +14,13 @@ import {
   Form,
 } from "react-bootstrap";
 function ProductDetails() {
+
   const dispatch = useDispatch();
   const { id } = useParams();
   const navigate = useNavigate();
  const [qty,setQty] = useState(1);
+ const [isHovered, setIsHovered] = useState(false);
+
   const productList = useSelector((state) => state.productList.products);
   const product = productList.find((product) => String(product.id) === id);
 debugger
@@ -27,10 +30,16 @@ debugger
 debugger
     navigate(`/cart/${id}/${qty}`);
   };
+  debugger
   if (!product) {
     return <div>Product not found</div>;
   }
 //mt-5 mb-5 container d-flex justify-content-between p-3
+// <Image src={product.image} alt={product.title} fluid className={isHovered ? 'zoom-effect' : ''}
+//     onMouseEnter={() => setIsHovered(true)}
+//     onMouseLeave={() => setIsHovered(false)}
+//   />
+
   return (
     <div className='container'>
     <Link className="btn btn-light my-3" to="/">
@@ -39,8 +48,11 @@ debugger
     <div className='m-0'>
     <Row>
     <Col md={6}>
-    <Image src={product.image} alt={product.title} fluid />
-
+    <div  className={`image-container ${isHovered ? 'zoom-effect' : ''}`}
+    onMouseEnter={() => setIsHovered(true)}
+    onMouseLeave={() => setIsHovered(false)}>
+    <Image src={product.image} alt={product.title} fluid className='product-image' />
+    </div>
     </Col>
     <Col md={3}>
     <ListGroup variant='flush'>

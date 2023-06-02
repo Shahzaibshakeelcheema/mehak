@@ -6,10 +6,9 @@ import {
   Row,
   Col,
   Image,
-  ListGroup,
-  Card,
+  
   Button,
-  Form,
+  
 } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
@@ -28,7 +27,7 @@ const CartScreen = () => {
 
     if (name && address) {
       dispatch(checkout(name, address));
-      debugger
+      
       navigate('/order');
     } else {
       alert('Please enter your name and address.');
@@ -45,7 +44,7 @@ const CartScreen = () => {
     let bill = 0;
 
     cartItems.forEach((item) => {
-      quantity = totalQuantity + item.qty;
+      quantity += Number(item.qty);
       bill += item.qty * item.price;
     });
 
@@ -70,7 +69,7 @@ const CartScreen = () => {
       <div className="m-0">
         <h1>Your Cart</h1>
         <div>
-          {cartItems.map((item) => (
+          {cartItems?.map((item) => (
             <div key={item.id}>
               <Row className="mt-1 p-1">
                 <Col md={2}>

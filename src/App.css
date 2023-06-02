@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+/* .zoom-effect {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+} */
+.image-container {
+  position: relative;
+  overflow: hidden;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+  transition: transform 0.3s ease;
+}
+
+.zoom-effect {
+  transform: scale(1.1);
+}
+.zoom-effect :hover{
+border: red 2px solid;
+
+}

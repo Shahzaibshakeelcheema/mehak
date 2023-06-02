@@ -16,15 +16,19 @@ const productsFromStorage = localStorage.getItem("products")
   ? JSON.parse(localStorage.getItem("products"))
   : null;
 
-  // const cartItemsFromStorage = localStorage.getItem('cartItems')
-  // ? (localStorage.getItem("cartItems"))
-  // : null;
+  const cartItemsFromStorage = localStorage.getItem('cartItems')
+  ? (localStorage.getItem("cartItems"))
+  : [];
+  const ordersFromStorage = localStorage.getItem('orders')
+  ? JSON.parse(localStorage.getItem('orders'))
+  : [];
+
 
   const initialState = {
-    productList : { products : productsFromStorage },
-    // cartList   :  { cartItems: cartItemsFromStorage },
-  }
-
+    productList: { products: productsFromStorage },
+    cartList: { cartItems: ordersFromStorage, orders: ordersFromStorage },
+    // cartList:{cartItems:cartItemsFromStorage}
+  };
 const store = createStore(
   reducer,
   initialState,

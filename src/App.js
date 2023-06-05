@@ -10,6 +10,7 @@ import CartScreen from './screens/CartScreen';
 import CartList from './screens/CartList'
 import OrderConfirmationScreen from './screens/OrderConfirmationScreen';
 import ProductList from './screens/ProductList';
+import OrderHistory from './screens/OrderHistory';
 
 function App() {
   
@@ -26,8 +27,9 @@ function App() {
 
                   <Route path='/cart/:id/:qty' element={<CartScreen/>}/>
                   <Route path='/cart' element={<CartList/>}/>
-                  <Route path='/order' element={<OrderConfirmationScreen/>}/>
+                  <Route path='/orders/all' element={<OrderConfirmationScreen/>}/>
                   <Route path='/product' element={<ProductList/>}/>
+                  <Route path='/order' element={<OrderHistory/>}/>
         </Routes>
         <Footer/>
 

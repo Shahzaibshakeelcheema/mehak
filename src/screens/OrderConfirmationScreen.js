@@ -8,15 +8,15 @@ const OrderConfirmationScreen = () => {
   const navigate = useNavigate();
 debugger
   const handleClickButton = () => {
-    navigate('/orders/all');
+    navigate('/home');
   };
 
   return (
-    <div className="container">
-      <Link className="btn btn-light my-3" to="/product/">
+    <div className="container mb-5">
+      <Link className="btn btn-primary my-3" to="/product/">
         Go Back
       </Link>
-<h4>Order Histories</h4>
+<h4>All Orders</h4>
       {orders.length === 0 ? (
         <div>No orders available</div>
       ) : (
@@ -45,7 +45,7 @@ debugger
               <Row className="">
                 <Col>Order ID:</Col>
                 <Col>
-                  <h3>{Date.now()+totalPrice-totalQuantity}</h3>
+                  <h3>{id}</h3>
                 </Col>
               </Row>
               <Row className="">
@@ -114,7 +114,7 @@ debugger
       )}
 
       <Row>
-        <Button onClick={handleClickButton}>Orders</Button>
+        <Button onClick={handleClickButton} className='btn btn-primary'>Shop More</Button>
       </Row>
     </div>
   );

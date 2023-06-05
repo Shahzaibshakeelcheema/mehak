@@ -40,6 +40,7 @@ export const checkout = (name, address) => (dispatch, getState) => {
   // Place the order with the provided name, address, and cart items
   
   const order = {
+    id:Date.now(),
     name,
     address,
     cartItems,

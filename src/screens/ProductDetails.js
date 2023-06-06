@@ -13,6 +13,7 @@ import {
   Button,
   Form,
 } from "react-bootstrap";
+import Rating from '../components/Rating';
 function ProductDetails() {
 
   const dispatch = useDispatch();
@@ -42,7 +43,7 @@ debugger
 
   return (
     <div className='container mb-5'>
-    <Link className="btn btn-light my-3" to="/">
+    <Link className="btn btn-primary my-3" to="/">
         Go Back
       </Link>
     <div className='m-0'>
@@ -78,10 +79,10 @@ debugger
                     <Col>InStock: </Col>
                     <Col>
                       <strong>{product.stock}</strong>
-                    </Col>
-                    <Col>Rating: </Col>
+                    </Col></Row>
+                    <Row>
                     <Col className='text-warning'>
-                      <strong>{product.rating}</strong>
+                      <strong><Rating value={product.rating} text='   Reviews'/></strong>
                     </Col>
                   </Row>
                   <Row>

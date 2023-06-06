@@ -1,6 +1,7 @@
 import React from "react";
 import { Card ,Row ,Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Rating from "./Rating";
 
 const Product = ({ product }) => {
   //#d9534f
@@ -25,7 +26,7 @@ const Product = ({ product }) => {
 
           <Card.Text as="h3" className="text-primary"><Row><Col><h6>Price: </h6></Col><Col><h3><span as='h4' className="text-info">$</span>{product.price}</h3></Col></Row></Card.Text>
           <Card.Text as="h6">Count InStock: <strong><span as='h5' className="text-danger">{product.stock}</span></strong></Card.Text>
-          <Card.Text as="p">Rating: <strong><span as='h6' className="text-info" >{product.rating}</span></strong></Card.Text>
+          <Card.Text as="p"> <span><Rating value={product.rating} text='Reviews'/></span></Card.Text>
           
 
         </Card.Body>

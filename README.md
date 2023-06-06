@@ -68,3 +68,23 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
+
+
+
+
+
+<!-- <div className='d-flex justify-content-between mb-5 mt-2'>
+      {cartItems.length === 0 ? (
+        <div>Your Cart is empty</div>):(<div><div className="mt-3">
+      <h2>Total Quantity: {totalQuantity}</h2>
+      <h2>Total Bill: ${totalBill.toFixed(2)}</h2>
+    </div>
+    <div>
+      <Button className="mt-3 mb-5" onClick={checkoutHandler}>Checkout</Button>
+    </div>
+    </div>)}
+      </div> -->

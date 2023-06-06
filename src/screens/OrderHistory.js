@@ -8,7 +8,9 @@ const OrderHistory = () => {
   const navigate = useNavigate();
 
   const handleClickButton = () => {
+    alert("Order Is Placed Successfully")
     navigate('/orders/all');
+
   };
 
   // Sort orders by descending order of id
@@ -68,7 +70,7 @@ const OrderHistory = () => {
         <Row className="">
           <Col>Address:</Col>
           <Col>
-            <h4>{address}</h4>
+            <p>{address}</p>
           </Col>
         </Row>
 

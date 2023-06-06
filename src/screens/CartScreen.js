@@ -1,34 +1,43 @@
 // CartScreen.js
-import React, { useState ,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import {
   Row,
   Col,
   Image,
-  
   Button,
-  
-} from "react-bootstrap";
+  Modal,
+  Form,
+} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
-import { removeFromCart, checkout } from '../actions/cartActions';
+import { removeFromCart, checkout, resetCart } from '../actions/cartActions';
 
 const CartScreen = () => {
   const cartItems = useSelector((state) => state.cartList.cartItems);
   const dispatch = useDispatch();
   const [totalQuantity, setTotalQuantity] = useState(0);
   const [totalBill, setTotalBill] = useState(0);
+  const [showModal, setShowModal] = useState(false);
+  const [name, setName] = useState('');
+  const [address, setAddress] = useState('');
   const navigate = useNavigate();
 
-  const checkoutHandler = () => {
-    const name = window.prompt('Enter your name');
-    const address = window.prompt('Enter your address');
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
 
+  const handleShowModal = () => {
+    setShowModal(true);
+  };
+
+  const handleCheckout = () => {
     if (name && address) {
       dispatch(checkout(name, address));
-      
+      handleCloseModal();
       navigate('/order');
+      dispatch(resetCart()); // Dispatch the action to reset the cart state
     } else {
       alert('Please enter your name and address.');
     }
@@ -38,7 +47,6 @@ const CartScreen = () => {
     dispatch(removeFromCart(productId));
   };
 
-  // Calculate total quantity and total bill
   const calculateTotal = () => {
     let quantity = 0;
     let bill = 0;
@@ -52,7 +60,6 @@ const CartScreen = () => {
     setTotalBill(bill);
   };
 
-  // Call calculateTotal whenever cartItems changes
   useEffect(() => {
     calculateTotal();
   }, [cartItems]);
@@ -60,7 +67,6 @@ const CartScreen = () => {
   if (!cartItems) {
     return <div>Product not found</div>;
   }
-  
   return (
     <div className="container">
       <Link className="btn btn-light my-3" to="/">
@@ -68,6 +74,8 @@ const CartScreen = () => {
       </Link>
       <div className="m-0">
         <h1>Your Cart</h1>
+        {cartItems.length===0 ?(
+          <div>Cart is Empty</div>):(
         <div>
           {cartItems?.map((item) => (
             <div key={item.id}>
@@ -99,17 +107,59 @@ const CartScreen = () => {
               </Row>
             </div>
           ))}
-        </div>
+        </div>)}
       </div>
       <div className='d-flex justify-content-between mb-5 mt-2'>
-        <div className="mt-3">
-          <h2>Total Quantity: {totalQuantity}</h2>
-          <h2>Total Bill: ${totalBill.toFixed(2)}</h2>
-        </div>
-        <div>
-          <Button className="mt-3 mb-5" onClick={checkoutHandler}>Checkout</Button>
-        </div>
+      {cartItems.length === 0 ? (
+        <div>To buy items Kindly visit Home Page</div>):(<div><div className="mt-3">
+      <h2>Total Quantity: {totalQuantity}</h2>
+      <h2>Total Bill: ${totalBill.toFixed(2)}</h2>
+    </div>
+    
+    </div>)}
+    <div>
+    <Button className="mt-3 mb-5" onClick={handleShowModal}>
+    Checkout
+  </Button>
+</div>
+
       </div>
+      {/*Model Popup*/}
+      <Modal show={showModal} onHide={handleCloseModal}>
+      <Modal.Header closeButton>
+        <Modal.Title>Enter Client Details</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <Form>
+          <Form.Group controlId="name">
+            <Form.Label>Name</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter your name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group controlId="address">
+            <Form.Label>Address</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter your address"
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
+            />
+          </Form.Group>
+        </Form>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button variant="secondary" onClick={handleCloseModal}>
+          Close
+        </Button>
+        <Button variant="primary" onClick={handleCheckout}>
+          Checkout
+        </Button>
+      </Modal.Footer>
+    </Modal>
     </div>
   );
 };

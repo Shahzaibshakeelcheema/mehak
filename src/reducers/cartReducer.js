@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_FROM_CART, CHECKOUT } from '../actions/cartActions';
+import { ADD_TO_CART, REMOVE_FROM_CART, CHECKOUT,RESET_CART } from '../actions/cartActions';
 
 const initialState = {
   cartItems: [],
@@ -40,6 +40,12 @@ debugger
         orders: [...state.orders, action.payload],
       };
 
+      case RESET_CART:
+      return {
+        ...state,
+        cartItems: [],
+        // reset other cart state properties if needed
+      };
     default:
       return state;
   }

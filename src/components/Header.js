@@ -9,7 +9,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const Header = () => {
     //<span className="mt-2" as='h1'> مہکستان</span>
   return (
-    <Navbar expand="lg" bg="primary" variant="dark" className='p-0 d-flex jusify-content-between '>
+    <div className='mb-5'><div className='pt-5'>
+    <Navbar expand="lg" bg="primary" variant="dark" className='p-0 d-flex jusify-content-between fixed-top  mb-5'>
     <Navbar.Brand as={Link} to="/" className='ml-3' >
     <img src={logo2} alt="Logo" width="120" height="70" className="d-inline-block align-top" />
     </Navbar.Brand>
@@ -47,7 +48,7 @@ const Header = () => {
       
       
     </Navbar.Collapse>
-  </Navbar>
+  </Navbar></div></div>
   )
 }
 

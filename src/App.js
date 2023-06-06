@@ -11,13 +11,14 @@ import CartList from './screens/CartList'
 import OrderConfirmationScreen from './screens/OrderConfirmationScreen';
 import ProductList from './screens/ProductList';
 import OrderHistory from './screens/OrderHistory';
+import ProductForm from './components/ProductForm';
 
 function App() {
   
   return (
     <div className="App">
     <BrowserRouter>
-    <Header/>
+    <Header className="mb-5"/>
         <Routes>
                   <Route path='/home' element={<TestScreen/>}/>
                   <Route path='/product/:id' element={<ProductDetails/>}/>
@@ -29,6 +30,7 @@ function App() {
                   <Route path='/cart' element={<CartList/>}/>
                   <Route path='/orders/all' element={<OrderConfirmationScreen/>}/>
                   <Route path='/product' element={<ProductList/>}/>
+                  <Route path='/product/add' element={<ProductForm/>}/>
                   <Route path='/order' element={<OrderHistory/>}/>
         </Routes>
         <Footer/>
